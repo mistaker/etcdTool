@@ -96,3 +96,9 @@ func (this *ClientDis) SerList2Array()[]string {
 	}
 	return addrs
 }
+
+func main () {
+	cli,_ := NewClientDis([]string{"127.0.0.1:2379"})
+	cli.GetService("/node")
+	select {}
+}

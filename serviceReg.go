@@ -99,3 +99,9 @@ func (this *ServiceReg) RevokeLease() error {
 	_, err := this.lease.Revoke(context.TODO(), this.leaseResp.ID)
 	return err
 }
+
+func main() {
+	ser,_ := NewServiceReg([]string{"127.0.0.1:2379"},5)
+	ser.PutService("/node/111","heiheihei")
+	select{}
+}
